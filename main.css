@@ -1,0 +1,388 @@
+html {
+    font-family: 'Poppins';
+    background-color: #362222;
+    color: #AEF3E7;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+}
+#line-break {
+    width: 50%;
+}
+
+
+.todoCard {
+    width: 50vw;
+    background-color: #AEF3E7;
+    border: 1px solid #AEF3E7;
+    border-radius: 4px;
+    color: #362222;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+
+
+}
+
+#projectsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 100vh;
+    background-color: #2B2B2B;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+#todoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    position: fixed;
+    left: 20vw;
+    column-gap: 10px;
+    row-gap: 20px;
+    margin-top: 20px;
+}
+
+p, a {
+    margin: 5px 0 5px 0;
+    font-size: 25px;
+}
+
+#todoPopup {
+    margin: auto;
+    width: 50vw;
+    height: 60vh;
+    border: 2px solid white;
+    background-color: #2B2B2B;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr 1fr;
+    row-gap: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    filter: blur(0);
+
+}
+
+h2 {
+    margin: 0;
+    font-size: 50px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0.5vw;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.checkbox:hover {
+    background-color: #2B2B2B;
+}
+
+.unopened h2 {
+    font-size: 30px;
+}
+
+.title {
+    padding: 0 0.5vw 0 0.5vw;
+}
+
+.dueDate, .priority {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dueDate {
+    margin-right: 2vw;
+}
+
+
+.priority {
+    margin-right: 3vw;
+    padding: 3px;
+    border-radius: 10px;
+    
+}
+
+.unopened {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 4.5vh;
+    align-items: center;
+
+    
+}
+
+.firstTwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 30vw;
+    height: 4vh;
+    align-items: center;
+}
+
+.lastTwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 30vw;
+    height: 4vh;
+    align-items: center;
+}
+
+.deleteTodo {
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    text-align: center;
+    background: #fa8072;
+    color: #AEF3E7;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    font-family: 'Poppins';
+    font-size: 20px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 0 5px 0 5px;
+    margin: 0;
+   
+
+}
+
+.deleteTodo:hover {
+    color: #fa8072;
+    background-color: #AEF3E7;
+}
+
+.down {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: -5px;
+    left: 25vw;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.editTodo {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #90ee90;
+    padding: 5px 2px 5px 2px;
+    border-top-left-radius: 4px;
+}
+
+.pencil {
+    width: 100%;
+    height: 100%;
+}
+
+
+.projectLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.projectLink:hover, .current {
+    background-color: #AEF3E7;
+    color: #362222
+}
+
+#Today {
+    display: block;
+}
+
+#popupContainer {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.deleteProj:hover {
+    opacity: 0.7;
+} 
+
+.addTodo {
+    width: 50vw;
+    margin: auto;
+    background-color: #fa8072;
+    border: none;
+    height: 35px;
+    border-radius: 4px;
+    color: #AEF3E7;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.addTodo:hover {
+    background-color: #AEF3E7;
+    color: #fa8072;
+
+}
+
+#addText:hover {
+    color: #fa8072;
+    background-color: #AEF3E7;
+    font-weight: bold;
+}
+#projForm {
+    display: grid;
+    grid-template-areas:
+        "head head"
+        "add cancel";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+}
+
+#cancl {
+    -webkit-appearance: none;
+    background-color: #fa8072;
+    color: #AEF3E7;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    grid-area: cancel;
+    height: 30px;
+}
+
+#cancl:hover {
+    background-color: #AEF3E7;
+    color: #fa8072;
+}
+
+#add {
+    -webkit-appearance: none;
+    appearance: none;
+    color: #362222;
+    background: #72efdd;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    grid-area: add;
+    height: 30px;
+}
+
+#add:hover {
+    background-color: #362222;
+    color: #72efdd;
+}
+
+
+
+#projInput {
+    font-family: 'Poppins';
+    grid-area: head;
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}
+
+#projInput:focus {
+    outline: none !important;
+    padding: 1px 2px;
+}
+
+.description {
+    margin: auto;
+    margin-top: 5px;
+    padding: 0.5vw;
+    font-size: 15px;
+    background-color: rgba(211, 211, 211, 1);
+    width: 87%;
+    border-radius: 10px;
+}
+
+#todoPopup input, select {
+    height: 60px;
+    margin: 0 50px 0 50px;
+    font-weight: 600;
+    font-size: 25px;
+} 
+
+input[type='text'], input[type='date'], select {
+    font-family: 'Poppins';
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    grid-column: 1 / 3;
+
+}
+
+input[type='submit'] {
+    margin: auto;
+    background-color: #fa8072;
+    border: none;
+    height: 35px;
+    border-radius: 4px;
+    color: #AEF3E7;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: bold;
+    grid-column: 1 / 2;
+    margin-right: 10px !important;
+}
+
+input[type='submit']:hover {
+    background-color: #AEF3E7;
+    color: #fa8072;
+}
+
+#welcome {
+    text-align: center;
+    justify-self: center;
+    padding-bottom: 5px;
+    grid-column: 1 / 3;
+}
+
+#cancelTodo {
+    margin: auto;
+    border: none;
+    height: 35px;
+    border-radius: 4px;
+    color: #362222;
+    font-family: 'Poppins';
+    font-weight: bold;
+    background-color: #90ee90;
+    grid-column: 2 / 3;
+    margin-left: 10px !important;
+
+}
+
+
+#cancelTodo:hover {
+    background-color: #362222;
+    color: #90ee90;
+}
+
+
+
